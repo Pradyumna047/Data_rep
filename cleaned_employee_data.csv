@@ -1,0 +1,17 @@
+employee_id,name,department,salary,start_date
+101,Alice,Sales,70000,2022-01-15
+102,Bob,Engineering,80000,2021-03-22
+103,Charlie,Sales,65000,2022-01-15
+104,David,Marketing,90000,2023-09-01
+105,Eve,Engineering,82000,2021-05-10
+106,Frank,Finance,75000,2023-11-20
+107,Grace,HR,85000,2020-08-12
+108,Peter,Engineering,75000,2022-01-15
+109,Tony,Sales,85000,2021-03-22
+110,Bruce,Marketing,65000,2022-01-15
+111,Chris,Finance,95000,2023-09-01
+112,Drax,Marketing,82000,2021-05-10
+113,Steve,Finance,80000,2021-03-22
+114,Rodey,Sales,75000,2023-11-20
+115,Sam,Marketing,85000,2020-08-12
+116,Barton,Finance,80000,2020-08-15
