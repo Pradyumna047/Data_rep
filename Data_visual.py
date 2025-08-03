@@ -34,7 +34,6 @@ df_analysis = pd.read_sql(query, conn)
 
 df_revenue_budget = pd.read_sql("SELECT * FROM revenue", conn)
 
-# Ensure numeric columns from the database are treated as numbers
 df_analysis['salary'] = pd.to_numeric(df_analysis['salary'], errors='coerce')
 df_revenue_budget['budget'] = pd.to_numeric(df_revenue_budget['budget'], errors='coerce')
 df_analysis['revenue_generated'] = pd.to_numeric(df_analysis['revenue_generated'], errors='coerce')
@@ -99,8 +98,8 @@ plt.figure(figsize=(10, 6))
 sns.scatterplot(
     x='salary',
     y='revenue_generated',
-    hue='department',  # Color points by department
-    size='revenue_generated', # Make points bigger for higher revenue
+    hue='department', 
+    size='revenue_generated', 
     sizes=(50, 500),
     alpha=0.7,
     data=df_analysis
