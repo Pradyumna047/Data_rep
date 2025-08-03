@@ -12,6 +12,9 @@ query_employees = "SELECT * FROM employees;"
 employee_df = pd.read_sql(query_employees, conn)
 print(employee_df.head()) # .head() prints the first 5 rows
 
+query_department_financials = pd.read_sql("SELECT * FROM department_finance", conn)
+print("\n--- Department Financials Overview ---")
+print(query_department_financials)
 print("\n--- Loading employees with their department ID using a JOIN ---")
 query_joined = """
 SELECT
