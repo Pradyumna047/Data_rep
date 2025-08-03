@@ -10,9 +10,6 @@ import numpy as np
 import sqlite3 as sql3
 
 
-""" Most effecient way of creating dataframe: dictionary of lists
-Column-Oriented: Pandas is designed to work with data in a column-oriented fashion. Providing data as a dictionary of lists directly maps to the internal structure that pandas uses to store the DataFrame. This alignment results in a more direct and faster creation process.
-Memory and Performance: This method is generally faster and more memory-efficient because pandas can directly take those lists (or even better, NumPy arrays) and construct the underlying data structures with minimal processing."""
 data = {
     'employee_id': [101, 102, 103, 104, 105, 102, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116],
     'name': ['Alice', '  Bob', 'Charlie', 'David', 'Eve', '  Bob', 'Frank', 'Grace', 'Peter', 'Tony', 'Bruce', 'Chris', 'Drax', 'Steve', 'Rodey', 'Sam', 'Barton'],
@@ -41,7 +38,6 @@ projects_data = [
 projects_columns = ['project_id', 'project_name', 'start_date', 'end_date', 'budget']
 df_projects = pd.DataFrame(projects_data, columns=projects_columns)
 
-# --- Create the Employee-Project link DataFrame ---
 employee_projects_data = [
     [102, 501], # Bob is on the Alpha Platform
     [105, 501], # Eve is on the Alpha Platform
@@ -77,12 +73,8 @@ print(df_employee_projects)
 print("DataFrame from a Excel file:")
 print(df_from_excel)
 
-
-# --- Create a database and save the tables ---
-
 conn = sql3.connect('company.db')
-# 'if_exists='replace'' will drop the table first if it already exists and create a new one. [3, 9]
-# 'index=False' prevents pandas from writing the DataFrame index as a column. 
+
 df_cleaned.to_sql('employees', conn, if_exists='replace', index=False)
 revenue_data.to_sql('revenue', conn, if_exists='replace', index=False)
 department_data.to_sql('departments', conn, if_exists='replace', index=False)
