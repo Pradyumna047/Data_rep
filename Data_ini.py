@@ -19,7 +19,7 @@ data = {
 }
 df = pd.DataFrame(data)
 
-"""efficient for performing numerical computations """
+
 revenue = np.array([['Sales', 900000000], ['Engineering', 200000000], ['Marketing', 500000000], ['Finance', 350000000], ['HR', 100000000]])
 columns = ['department', 'budget']
 revenue_data = pd.DataFrame(revenue, columns=columns)
