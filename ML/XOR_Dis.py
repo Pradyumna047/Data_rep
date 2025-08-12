@@ -15,11 +15,17 @@ model = tf.keras.models.load_model('xor_model.keras')
     
 print("Model loaded successfully.\n")
 
-user_input = input("\nEnter your three inputs: ").strip()
+user_input = input("\nEnter your inputs: ").strip()
 
 input_values = [int(val) for val in user_input.split()]
-if len(input_values) != 3 or not all(v in [0,1] for v in input_values):
-    raise ValueError
+if len(input_values) not in [2, 3] or not all(v in [0, 1] for v in input_values):
+    print("--> Invalid input.")
+    exit()  
+
+if len(input_values) == 2:
+    print("(Padding 2-input to 3-input for the model)")
+    input_values.append(0)
+
 
 input_array = np.array([input_values])
 prediction = model.predict(input_array, verbose=0)
