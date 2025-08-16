@@ -2,6 +2,8 @@
 """
 Created on Sat Aug 16 17:21:12 2025
 
+Neural Logic Synthesis: Emulating a Digital Multiplexer with TensorFlow
+
 @author: DELL
 """
 
